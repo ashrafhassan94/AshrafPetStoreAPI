@@ -1,0 +1,12 @@
+{
+  "name": "doggieDoggo",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}

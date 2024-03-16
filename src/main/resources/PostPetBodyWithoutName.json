@@ -1,0 +1,11 @@
+{
+  "photoUrls": [
+    "Any url for contains dog photo"
+  ],
+  "tags": [
+    {
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
