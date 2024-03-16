@@ -3,30 +3,29 @@ package org.Testinium;
 import io.restassured.response.Response;
 import org.Testinium.Constants.EndPoints;
 import org.Testinium.Constants.StatusCodes;
-
-import java.io.File;
-
 import static io.restassured.RestAssured.given;
-import static org.Testinium.Constants.EndPoints.file_Bath;
+import static org.Testinium.Constants.EndPoints.BASE_URL;
 
-public class PostPet extends Base{
-    File InsertedBody = new File(file_Bath);
-    public  String AddNewPet_returnNameUponSuccess() {
+public class PostPetBase extends Base{
+
+    public  String AddNewPet_returnNameUponSuccess(String Input) {
+
         Response response =  given()
                 .spec(requestSpec())
+                .body(Input)
                 .when()
-                .post(EndPoints.PET,InsertedBody)
+                .post(BASE_URL +EndPoints.PET)
                 .then()
                 .spec(responseSpec(StatusCodes.ACCEPTED))
                 .extract().response();
-
         return response.jsonPath().getString("name") ;
     }
-    public  String AddNewPet() {
+    public  String AddNewPet(String Input) {
         Response response =  given()
                 .spec(requestSpec())
+                .body(Input)
                 .when()
-                .post(EndPoints.PET,InsertedBody)
+                .post(EndPoints.PET)
                 .then()
                 .spec(responseSpec(StatusCodes.ACCEPTED))
                 .extract().response();
