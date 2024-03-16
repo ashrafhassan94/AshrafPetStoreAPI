@@ -20,14 +20,14 @@ public class PostPetBase extends Base{
                 .extract().response();
         return response.jsonPath().getString("name") ;
     }
-    public  String AddNewPet(String Input) {
+    public  String AddNewPet(String Input,int Status) {
         Response response =  given()
                 .spec(requestSpec())
                 .body(Input)
                 .when()
-                .post(EndPoints.PET)
+                .post(BASE_URL +EndPoints.PET)
                 .then()
-                .spec(responseSpec(StatusCodes.ACCEPTED))
+                .spec(responseSpec(Status))
                 .extract().response();
 
         return response.jsonPath().getString("name") ;

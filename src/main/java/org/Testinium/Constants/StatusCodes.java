@@ -10,5 +10,6 @@ public class StatusCodes {
     public static int BADREQUEST = 400 ;
 
     public static int UNKOWNERROR = 500 ;
+    public static int INVALIDINPUT = 405;
 
 }
